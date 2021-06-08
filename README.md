@@ -8,7 +8,7 @@ Code highlight `backtick`.
 ## Header two 
 
 New paragraph.
-Hyperlinks look like [GitHub Help]{https://help.github.com}.
+Hyperlinks look like [GitHub Help]{https://help.github.com }.
 
 ### Header three 
 
