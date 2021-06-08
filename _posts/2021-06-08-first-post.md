@@ -1,9 +1,9 @@
-...
+---
 layout: post
 title: My first post on Jekyll
 tags: first markdown example
 categories: demo
-...
+---
 
 This is an example paragraph.
 
