@@ -1,9 +1,9 @@
 # Site settings
-title: Great New Website
+title: Frieder Mitsch
 author: 
   name: Frieder Mitsch
   email: f.mitsch@lse.ac.uk
-description: "Great site about me on GH-Pages."
+  Institution: [LSE website](https://www.lse.ac.uk/International-Inequalities/People/frieder-mitsch)
 
 # Build settings
 remote_theme: jekyll/minima
