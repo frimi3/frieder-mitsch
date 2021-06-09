@@ -3,6 +3,7 @@
 <html>
 
 
+<!-- Mirrored from users.aalto.fi/~ave/teaching.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 09 Jun 2021 08:36:00 GMT -->
 <head>
 
 <meta charset="utf-8" />
@@ -11,7 +12,8 @@
 
 
 
-<title>Frieder Mitsch</title>
+
+<title>Frieder Mitsch - Teaching</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -28,6 +30,9 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
@@ -217,6 +222,69 @@ $(document).ready(function () {
 
 
 
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
 
 </head>
 
@@ -224,6 +292,16 @@ $(document).ready(function () {
 
 
 <div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-sm-12 col-md-4 col-lg-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-sm-12 col-md-8 col-lg-9">
 
 
 
@@ -259,40 +337,20 @@ $(document).ready(function () {
 
 <div id="header">
 
-<h1 class="title toc-ignore">Frieder Mitsch</h1>
 
+
+<h1 class="title toc-ignore">Frieder Mitsch - Teaching</h1>
 </div>
 
-<div id="PhD-Candidate-LSE-Government" class="section level2 toc-ignore">
-<h2>PhD Candidate in Political Science </br>
-London School of Economics</h2>
+<div id="2020/2021" class="section level2">
+<h2>2020/2021</h2>
 <ul>
-<li><a href="https://www.lse.ac.uk/International-Inequalities/People/frieder-mitsch/">International Inequalities Institute</a></p></li>
+<li>GV101 - Introduction to Political Science (Teaching Assistant)</li>
+<li>GV251 - Government, Politics and Public Policy in the European Union (Teaching Assistant)</li>
 </ul>
 </div>
 
-<div id="contact" class="section level2">
-<h2>Contact</h2>
-<ul>
-<li>Email: f.mitsch(at)lse.ac.uk</li>
-<li>Twitter: <a href="https://twitter.com/_frimi_">@_frimi_</a></li>
-<li>ORCID ID: <a href="https://orcid.org/0000-0002-2511-2979">0000-0002-2511-2979</a></li>
-</ul>
-Office: CBG 4.31 </br>
-London School of Economics and Political Science </br>
-Houghton Street, London,</br> WC2A 2AE,</br> UK</br>
 </div>
-</br>
-
-<div id="research" class="section level2">
-<h2>Research</h2>
-<ul>
-<li><a href="https://scholar.google.com/citations?user=AzevCMcAAAAJ&hl=en&oi=sra">Google Scholar Citations to my publications</a></li>
-<li><a href="https://orcid.org/0000-0002-2511-2979">ORCID ID: 0000-0002-2511-2979</a></li>
-</ul>
-
-<p>My research interest lies at the intersection of political economy and economic geography. My PhD work focuses on the consequences of economic change
-with a particular emphasis on Germany and is supervised by David Soskice (LSE Government) and Neil Lee (LSE Geography).</a></p>
 </div>
 
 </div>
@@ -326,6 +384,32 @@ $(document).ready(function () {
 
 <!-- code folding -->
 
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
@@ -339,5 +423,5 @@ $(document).ready(function () {
 
 </body>
 
-<!-- Mirrored from users.aalto.fi/~ave/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 09 Jun 2021 08:33:17 GMT -->
+<!-- Mirrored from users.aalto.fi/~ave/teaching.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 09 Jun 2021 08:36:00 GMT -->
 </html>
